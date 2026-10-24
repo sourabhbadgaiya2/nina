@@ -8,7 +8,12 @@ import { LINKS, newTab } from "@/lib/links";
 
 function Check({ className = "" }) {
   return (
-    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className={className}>
+    <svg
+      viewBox="0 0 16 16"
+      fill="none"
+      aria-hidden="true"
+      className={className}
+    >
       <path
         d="M13 4.5 6.5 11.5 3 8"
         stroke="currentColor"
@@ -149,7 +154,9 @@ function PlanCard({ plan, period }) {
           <li key={f} className="flex items-start gap-2.5">
             <span
               className={`mt-[3px] grid h-4 w-4 shrink-0 place-items-center rounded-full ${
-                plan.featured ? "bg-brand-2/25 text-brand-3" : "bg-brand-soft text-brand"
+                plan.featured
+                  ? "bg-brand-2/25 text-brand-3"
+                  : "bg-brand-soft text-brand"
               }`}
             >
               <Check className="h-2.5 w-2.5" />
@@ -225,6 +232,18 @@ export default function Pricing() {
             <span className="font-medium text-ink">
               not on the number of users.
             </span>
+          </p>
+        </Reveal>
+
+        <Reveal delay={0.14}>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-[14.5px] leading-relaxed">
+            {PLANS.filter((p) => p.price.annual.startsWith("$"))
+              .map(
+                (p) =>
+                  `${p.name} ${p.price.monthly}/month, or ${p.price.annual}/month billed annually`,
+              )
+              .join(" · ")}
+            . Enterprise is custom.
           </p>
         </Reveal>
       </section>

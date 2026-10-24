@@ -193,7 +193,7 @@ function DemoFrame({ src, title, eager = false }) {
     const el = wrap.current;
     if (!el) return;
     const ro = new ResizeObserver(([entry]) =>
-      setScale(entry.contentRect.width / DEMO_W)
+      setScale(entry.contentRect.width / DEMO_W),
     );
     ro.observe(el);
     return () => ro.disconnect();
@@ -282,7 +282,7 @@ function AskCarousel() {
     if (paused || reduceMotion) return;
     const id = setTimeout(
       () => setActive((i) => (i + 1) % ASKS.length),
-      ASK_HOLD
+      ASK_HOLD,
     );
     return () => clearTimeout(id);
   }, [active, paused, reduceMotion]);
@@ -315,7 +315,10 @@ function AskCarousel() {
               className="col-start-1 row-start-1"
               style={{ pointerEvents: on ? "auto" : "none" }}
               animate={{ opacity: on ? 1 : 0 }}
-              transition={{ duration: reduceMotion ? 0 : 0.45, ease: "easeOut" }}
+              transition={{
+                duration: reduceMotion ? 0 : 0.45,
+                ease: "easeOut",
+              }}
               aria-hidden={!on}
             >
               {/* One column at every width, so the copy always sits under the
@@ -364,7 +367,12 @@ function AskCarousel() {
 
 function Arrow({ className = "h-4 w-4" }) {
   return (
-    <svg className={className} viewBox="0 0 16 16" fill="none" aria-hidden="true">
+    <svg
+      className={className}
+      viewBox="0 0 16 16"
+      fill="none"
+      aria-hidden="true"
+    >
       <path
         d="M2.5 8h10m0 0L8.5 4m4 4-4 4"
         stroke="currentColor"
@@ -402,6 +410,14 @@ export default function Product() {
           <Reveal delay={0.08}>
             <p className="mx-auto mt-7 max-w-xl text-[16.5px] leading-relaxed sm:mt-8 sm:text-[18px]">
               Users say what they need, AgenQ gets it done inside your product
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-relaxed text-mute sm:text-[16px]">
+              NINA is AgenQ&apos;s AI product assistant for SaaS and insurance
+              software. It lives inside your product, understands what a user is
+              trying to do, and carries out the steps for them.
             </p>
           </Reveal>
 
@@ -463,8 +479,7 @@ export default function Product() {
                 docs, watch tutorials, or wait for help.
               </p>
               <p className="mt-5 max-w-[30rem] text-[17px] font-medium leading-relaxed text-ink">
-                The expertise exists. It just isn&apos;t there when they need
-                it
+                The expertise exists. It just isn&apos;t there when they need it
               </p>
             </div>
           </Reveal>
@@ -555,7 +570,6 @@ export default function Product() {
               </Reveal>
             ))}
           </div>
-
         </div>
       </section>
 
@@ -618,6 +632,17 @@ export default function Product() {
                 <p className="mt-5 text-[16px] leading-relaxed text-white/60">
                   AgenQ runs the workflow and confirms what changed
                 </p>
+                <p className="mt-4 text-[15px] leading-relaxed text-white/60">
+                  Digital adoption platforms and copilots show users where to
+                  click. AgenQ does it for them.{" "}
+                  <Link
+                    href="/resources/faq"
+                    className="font-medium text-white underline decoration-white/30 underline-offset-[3px] hover:decoration-white"
+                  >
+                    See how NINA differs
+                  </Link>
+                  .
+                </p>
                 <p className="mt-5 text-[17px] font-medium leading-relaxed text-white">
                   Your users get the result, not the instructions
                 </p>
@@ -640,35 +665,35 @@ export default function Product() {
             {VERTICALS.map((v, i) => {
               const Mock = VERTICAL_MOCKS[v.mock];
               return (
-              <Reveal key={v.title} delay={i * 0.1} className="h-full">
-                <motion.div
-                  whileHover={{ y: -5 }}
-                  transition={{ type: "spring", stiffness: 320, damping: 26 }}
-                  className="card group h-full overflow-hidden"
-                >
-                  <Link href={v.href} className="flex h-full flex-col">
-                    {/* Fixed ratio rather than a fixed height: the drawn scene
+                <Reveal key={v.title} delay={i * 0.1} className="h-full">
+                  <motion.div
+                    whileHover={{ y: -5 }}
+                    transition={{ type: "spring", stiffness: 320, damping: 26 }}
+                    className="card group h-full overflow-hidden"
+                  >
+                    <Link href={v.href} className="flex h-full flex-col">
+                      {/* Fixed ratio rather than a fixed height: the drawn scene
                         has to keep its proportions or the panels crop. */}
-                    <div className="aspect-[566/354] w-full border-b border-line">
-                      <Mock />
-                    </div>
-                    <div className="flex flex-1 flex-col p-7 sm:p-9">
-                      <h3 className="text-[21px] font-semibold tracking-[-0.025em] text-ink transition-colors duration-300 group-hover:text-brand">
-                        {v.title}
-                      </h3>
-                      <p className="mt-3.5 text-[15.5px] leading-relaxed">
-                        {v.body}
-                      </p>
-                      <span className="mt-6 inline-flex items-center gap-2 text-[15px] font-semibold text-brand">
-                        {v.cta}
-                        <span className="transition-transform duration-300 group-hover:translate-x-1">
-                          <Arrow />
+                      <div className="aspect-[566/354] w-full border-b border-line">
+                        <Mock />
+                      </div>
+                      <div className="flex flex-1 flex-col p-7 sm:p-9">
+                        <h3 className="text-[21px] font-semibold tracking-[-0.025em] text-ink transition-colors duration-300 group-hover:text-brand">
+                          {v.title}
+                        </h3>
+                        <p className="mt-3.5 text-[15.5px] leading-relaxed">
+                          {v.body}
+                        </p>
+                        <span className="mt-6 inline-flex items-center gap-2 text-[15px] font-semibold text-brand">
+                          {v.cta}
+                          <span className="transition-transform duration-300 group-hover:translate-x-1">
+                            <Arrow />
+                          </span>
                         </span>
-                      </span>
-                    </div>
-                  </Link>
-                </motion.div>
-              </Reveal>
+                      </div>
+                    </Link>
+                  </motion.div>
+                </Reveal>
               );
             })}
           </div>
