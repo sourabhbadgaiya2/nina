@@ -1,0 +1,83 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://agenq.com/#organization",
+      "name": "AgenQ",
+      "url": "https://agenq.com/",
+      "logo": "https://agenq.com/assets/agenq-logo.webp",
+      "description": "AgenQ is AI training and onboarding software for insurance agencies and brokerages. Staff ask how to do a task and AgenQ shows each step on their screen inside EZLynx or AMS360. In Execution Mode, AgenQ can complete approved tasks, with a person approving the important steps.",
+      "founder": {
+        "@type": "Person",
+        "name": "Varun Mishra",
+        "jobTitle": "Founder and CEO"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toronto",
+        "addressCountry": "CA"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/agenq/",
+        "https://www.youtube.com/@AIProductAssistant",
+        "https://x.com/agenQ_AI"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://agenq.com/features/product-knowledge-training/",
+      "name": "Your Procedures Inside Your Software | AgenQ Product Knowledge",
+      "description": "AgenQ uses your agency's procedures and training material, so employees learn the software your way. Keep know how in the business when people leave.",
+      "publisher": {
+        "@id": "https://agenq.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does AgenQ use our procedures or generic instructions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your approved procedures, training material and guided tasks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens when our process changes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Update your procedures, and AgenQ follows the new steps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does AgenQ know things nobody wrote down?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Knowledge needs to be captured in your procedures or training material first."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://agenq.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Your Procedures, on Every Screen",
+          "item": "https://agenq.com/features/product-knowledge-training/"
+        }
+      ]
+    }
+  ]
+}

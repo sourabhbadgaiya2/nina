@@ -1,0 +1,105 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://agenq.com/#organization",
+      "name": "AgenQ",
+      "url": "https://agenq.com/",
+      "logo": "https://agenq.com/assets/agenq-logo.webp",
+      "description": "AgenQ is AI training and onboarding software for insurance agencies and brokerages. Staff ask how to do a task and AgenQ shows each step on their screen inside EZLynx or AMS360. In Execution Mode, AgenQ can complete approved tasks, with a person approving the important steps.",
+      "founder": {
+        "@type": "Person",
+        "name": "Varun Mishra",
+        "jobTitle": "Founder and CEO"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toronto",
+        "addressCountry": "CA"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/agenq/",
+        "https://www.youtube.com/@AIProductAssistant",
+        "https://x.com/agenQ_AI"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://agenq.com/ezlynx/",
+      "name": "EZLynx Training and Onboarding for Agency Staff | AgenQ",
+      "description": "AI training and onboarding inside EZLynx. New and experienced staff ask \"How do I…?\" and see the steps on their screen.",
+      "publisher": {
+        "@id": "https://agenq.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can AgenQ help onboard new employees on EZLynx?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. New hires learn EZLynx by doing real client work from the start, with the steps shown on their screen instead of weeks of shadowing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can AgenQ train experienced staff too?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Experienced staff get help with tasks they rarely do, without asking a colleague."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is AgenQ different from EZLynx University, Scribe or Loom?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They teach before or away from the task. AgenQ helps during the task, on the EZLynx screen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is AgenQ affiliated with EZLynx or Applied Systems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. AgenQ is independent."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "AgenQ for EZLynx",
+      "url": "https://agenq.com/ezlynx/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "AgenQ for EZLynx is AI training and onboarding software that works inside EZLynx. Insurance agency staff ask how to do a task and see each step on their EZLynx screen."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://agenq.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AgenQ for Insurance",
+          "item": "https://agenq.com/solutions/insurance/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Your Staff Know the Client. AgenQ Knows EZLynx.",
+          "item": "https://agenq.com/ezlynx/"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://agenq.com/#organization",
+      "name": "AgenQ",
+      "url": "https://agenq.com/",
+      "logo": "https://agenq.com/assets/agenq-logo.webp",
+      "description": "AgenQ is AI training and onboarding software for insurance agencies and brokerages. Staff ask how to do a task and AgenQ shows each step on their screen inside EZLynx or AMS360. In Execution Mode, AgenQ can complete approved tasks, with a person approving the important steps.",
+      "founder": {
+        "@type": "Person",
+        "name": "Varun Mishra",
+        "jobTitle": "Founder and CEO"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toronto",
+        "addressCountry": "CA"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/agenq/",
+        "https://www.youtube.com/@AIProductAssistant",
+        "https://x.com/agenQ_AI"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://agenq.com/features/workflow-navigation/",
+      "name": "Training Mode: Step by Step Software Training on Your Screen | AgenQ",
+      "description": "AgenQ Training Mode shows employees each step inside their insurance software while they do the real work. Training and onboarding without videos or classes.",
+      "publisher": {
+        "@id": "https://agenq.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does Training Mode work inside our insurance software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The steps appear on the screen your employee is using, not in a separate video or document."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Training Mode change our records?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Your employee makes every change."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can it follow our procedures?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. AgenQ uses your approved guided tasks and training material."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which software does it support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "EZLynx and Vertafore AMS360 today. See AgenQ for EZLynx and AgenQ for AMS360."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://agenq.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Learn the Software While Doing the Work",
+          "item": "https://agenq.com/features/workflow-navigation/"
+        }
+      ]
+    }
+  ]
+}

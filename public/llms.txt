@@ -1,0 +1,33 @@
+# AgenQ
+
+> AgenQ is a Toronto-based company. Its product, NINA, is an AI product assistant for SaaS and insurance software. NINA lives inside your product, understands what a user is trying to do, and carries out the steps for them, instead of only answering questions or showing where to click.
+
+NINA works differently from a copilot or a digital adoption platform: it executes the workflow and confirms what changed. Pricing is per assistant, not per user.
+
+## Product
+- [Overview](https://agenq.com/): What NINA is and how it works
+- [Voice and chat guidance](https://agenq.com/features/voice-and-chat-guidance/)
+- [Workflow navigation](https://agenq.com/features/workflow-navigation/)
+- [Action-based execution](https://agenq.com/features/action-based-execution/)
+- [Product knowledge and training](https://agenq.com/features/product-knowledge-training/)
+
+## Solutions
+- [For insurance software](https://agenq.com/solutions/insurance/)
+- [For SaaS onboarding](https://agenq.com/solutions/saas-onboarding/)
+- [Faster revenue](https://agenq.com/solutions/faster-revenue/)
+- [Lower costs](https://agenq.com/solutions/lower-costs/)
+- [Operations overload](https://agenq.com/solutions/operations-overload/)
+- [Knowledge loss](https://agenq.com/solutions/knowledge-loss/)
+
+## Pricing
+- [Pricing](https://agenq.com/pricing/): Starter $199/month ($159/month billed annually), Growth $999/month ($799/month billed annually), Enterprise custom. 7-day free trial, no credit card required.
+
+## Resources
+- [FAQ](https://agenq.com/resources/faq/): What NINA is, what it can do inside a product, installation, cost
+- [Documentation](https://agenq.com/documentation/)
+- [Customer stories](https://agenq.com/resources/customer-stories/)
+- [Use cases](https://agenq.com/resources/use-cases/)
+- [Blog](https://agenq.com/blog/)
+
+## Contact
+- founder@agenq.com

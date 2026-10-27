@@ -1,0 +1,83 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://agenq.com/#organization",
+      "name": "AgenQ",
+      "url": "https://agenq.com/",
+      "logo": "https://agenq.com/assets/agenq-logo.webp",
+      "description": "AgenQ is AI training and onboarding software for insurance agencies and brokerages. Staff ask how to do a task and AgenQ shows each step on their screen inside EZLynx or AMS360. In Execution Mode, AgenQ can complete approved tasks, with a person approving the important steps.",
+      "founder": {
+        "@type": "Person",
+        "name": "Varun Mishra",
+        "jobTitle": "Founder and CEO"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toronto",
+        "addressCountry": "CA"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/agenq/",
+        "https://www.youtube.com/@AIProductAssistant",
+        "https://x.com/agenQ_AI"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://agenq.com/features/voice-and-chat-guidance/",
+      "name": "Ask by Typing or Speaking | AgenQ Voice and Chat",
+      "description": "Ask AgenQ how to do any task in your insurance software, by typing or speaking in plain English. See the steps on your screen.",
+      "publisher": {
+        "@id": "https://agenq.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do employees need special commands?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. They describe the task in their own words."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can they type instead of speak?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Both work."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does speaking change what AgenQ is allowed to do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The same permissions and approvals apply."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://agenq.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ask by Typing or Speaking",
+          "item": "https://agenq.com/features/voice-and-chat-guidance/"
+        }
+      ]
+    }
+  ]
+}

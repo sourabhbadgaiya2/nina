@@ -23,16 +23,12 @@ function Numbered({ items, tone = "light" }) {
             whileHover={{ y: -4 }}
             transition={{ type: "spring", stiffness: 320, damping: 26 }}
             className={`h-full rounded-3xl p-6 sm:p-7 ${
-              dark
-                ? "border border-white/10 bg-white/[0.03]"
-                : "card"
+              dark ? "border border-white/10 bg-white/[0.03]" : "card"
             }`}
           >
             <span
               className={`grid h-10 w-10 place-items-center rounded-xl text-[13px] font-semibold ${
-                dark
-                  ? "bg-brand-2/20 text-brand-3"
-                  : "bg-brand-soft text-brand"
+                dark ? "bg-brand-2/20 text-brand-3" : "bg-brand-soft text-brand"
               }`}
             >
               {String(i + 1).padStart(2, "0")}
@@ -59,7 +55,17 @@ function Numbered({ items, tone = "light" }) {
 }
 
 export default function MarketingPage({ page }) {
-  const { eyebrow, headline, accent, subhead, problem, impact, solution, results, closing } = page;
+  const {
+    eyebrow,
+    headline,
+    accent,
+    subhead,
+    problem,
+    impact,
+    solution,
+    results,
+    closing,
+  } = page;
 
   return (
     <main id="top" className="overflow-x-clip">

@@ -48,7 +48,8 @@ function DropdownMenu({ item }) {
   useEffect(() => {
     const onKey = (e) => e.key === "Escape" && setOpen(false);
     const onDown = (e) => {
-      if (wrapRef.current && !wrapRef.current.contains(e.target)) setOpen(false);
+      if (wrapRef.current && !wrapRef.current.contains(e.target))
+        setOpen(false);
     };
     window.addEventListener("keydown", onKey);
     document.addEventListener("mousedown", onDown);
@@ -89,18 +90,44 @@ function DropdownMenu({ item }) {
             // on Your Product Knowledge" would otherwise wrap to three lines.
             className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-2"
           >
-            <div className="w-max min-w-[13rem] max-w-[20rem] overflow-hidden rounded-2xl border border-line bg-paper p-1.5 shadow-soft">
-              {item.children.map((c) => (
-                <Link
-                  key={c.label}
-                  href={c.href}
-                  role="menuitem"
-                  onClick={() => setOpen(false)}
-                  className="flex min-h-[40px] items-center rounded-xl px-3 text-[14px] font-medium text-slate transition-colors duration-200 hover:bg-tint hover:text-brand"
-                >
-                  {c.label}
-                </Link>
-              ))}
+            <div className="w-max min-w-[13rem] max-w-[20rem] overflow-hidden rounded-2xl border border-line bg-paper p-3 shadow-soft">
+              {item.sections ? (
+                <div className="space-y-5 px-2 py-2">
+                  {item.sections.map((section) => (
+                    <div key={section.heading}>
+                      <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.12em] text-slate/80">
+                        {section.heading}
+                      </p>
+
+                      <div className="grid gap-1">
+                        {section.children.map((c) => (
+                          <Link
+                            key={c.href}
+                            href={c.href}
+                            role="menuitem"
+                            onClick={() => setOpen(false)}
+                            className="flex min-h-[40px] items-center rounded-xl px-1 text-[14px] font-medium text-slate transition-colors duration-200 hover:bg-tint hover:text-brand"
+                          >
+                            {c.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                item.children.map((c) => (
+                  <Link
+                    key={c.href}
+                    href={c.href}
+                    role="menuitem"
+                    onClick={() => setOpen(false)}
+                    className="flex min-h-[40px] items-center rounded-xl px-3 text-[14px] font-medium text-slate transition-colors duration-200 hover:bg-tint hover:text-brand"
+                  >
+                    {c.label}
+                  </Link>
+                ))
+              )}
             </div>
           </motion.div>
         )}
@@ -114,6 +141,7 @@ function DropdownMenu({ item }) {
  * place. Its state lives here rather than in Nav because the whole sheet
  * unmounts when the burger closes, which resets the disclosure for free.
  */
+
 function MobileDisclosure({ item, onNavigate }) {
   const [open, setOpen] = useState(false);
 
@@ -129,8 +157,6 @@ function MobileDisclosure({ item, onNavigate }) {
         <Chevron open={open} />
       </button>
 
-      {/* `initial={false}` so the panel doesn't animate open on first paint
-          when the sheet itself is still sliding in. */}
       <AnimatePresence initial={false}>
         {open && (
           <motion.div
@@ -140,17 +166,38 @@ function MobileDisclosure({ item, onNavigate }) {
             transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden"
           >
-            <div className="grid gap-0.5 pt-1">
-              {item.children.map((c) => (
-                <Link
-                  key={c.label}
-                  href={c.href}
-                  onClick={onNavigate}
-                  className="flex min-h-[44px] items-center rounded-2xl py-2.5 pl-8 pr-4 text-[15px] font-medium text-slate transition-colors hover:bg-tint hover:text-brand"
-                >
-                  {c.label}
-                </Link>
-              ))}
+            <div className="grid gap-4 pt-3">
+              {item.sections
+                ? item.sections.map((section) => (
+                    <div key={section.heading}>
+                      <p className="px-8 pb-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-slate/80">
+                        {section.heading}
+                      </p>
+
+                      <div className="grid gap-0.5">
+                        {section.children.map((c) => (
+                          <Link
+                            key={c.href}
+                            href={c.href}
+                            onClick={onNavigate}
+                            className="flex min-h-[44px] items-center rounded-2xl py-2.5 pl-8 pr-4 text-[15px] font-medium text-slate transition-colors hover:bg-tint hover:text-brand"
+                          >
+                            {c.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ))
+                : item.children.map((c) => (
+                    <Link
+                      key={c.href}
+                      href={c.href}
+                      onClick={onNavigate}
+                      className="flex min-h-[44px] items-center rounded-2xl py-2.5 pl-8 pr-4 text-[15px] font-medium text-slate transition-colors hover:bg-tint hover:text-brand"
+                    >
+                      {c.label}
+                    </Link>
+                  ))}
             </div>
           </motion.div>
         )}
@@ -158,6 +205,51 @@ function MobileDisclosure({ item, onNavigate }) {
     </li>
   );
 }
+
+// function MobileDisclosure({ item, onNavigate }) {
+//   const [open, setOpen] = useState(false);
+
+//   return (
+//     <li>
+//       <button
+//         type="button"
+//         aria-expanded={open}
+//         onClick={() => setOpen((v) => !v)}
+//         className="flex min-h-[44px] w-full items-center justify-between rounded-2xl px-4 py-2.5 text-[15px] font-medium text-slate transition-colors hover:bg-tint hover:text-ink"
+//       >
+//         {item.label}
+//         <Chevron open={open} />
+//       </button>
+
+//       {/* `initial={false}` so the panel doesn't animate open on first paint
+//           when the sheet itself is still sliding in. */}
+//       <AnimatePresence initial={false}>
+//         {open && (
+//           <motion.div
+//             initial={{ height: 0, opacity: 0 }}
+//             animate={{ height: "auto", opacity: 1 }}
+//             exit={{ height: 0, opacity: 0 }}
+//             transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
+//             className="overflow-hidden"
+//           >
+//             <div className="grid gap-0.5 pt-1">
+//               {item.children.map((c) => (
+//                 <Link
+//                   key={c.label}
+//                   href={c.href}
+//                   onClick={onNavigate}
+//                   className="flex min-h-[44px] items-center rounded-2xl py-2.5 pl-8 pr-4 text-[15px] font-medium text-slate transition-colors hover:bg-tint hover:text-brand"
+//                 >
+//                   {c.label}
+//                 </Link>
+//               ))}
+//             </div>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+//     </li>
+//   );
+// }
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -203,7 +295,7 @@ export default function Nav() {
         <ul className="hidden items-center gap-12 lg:flex">
           {links.map((l) => (
             <li key={l.label}>
-              {l.children ? (
+              {l.children || l.sections ? (
                 <DropdownMenu item={l} />
               ) : (
                 <a
@@ -247,7 +339,9 @@ export default function Nav() {
           <span className="relative block h-4 w-[18px]" aria-hidden="true">
             <span
               className={`absolute left-0 h-[2px] w-[18px] rounded-full bg-ink transition-all duration-300 ease-out ${
-                open ? "top-1/2 -translate-y-1/2 rotate-45" : "top-[3px] rotate-0"
+                open
+                  ? "top-1/2 -translate-y-1/2 rotate-45"
+                  : "top-[3px] rotate-0"
               }`}
             />
             <span
@@ -257,7 +351,9 @@ export default function Nav() {
             />
             <span
               className={`absolute left-0 h-[2px] w-[18px] rounded-full bg-ink transition-all duration-300 ease-out ${
-                open ? "top-1/2 -translate-y-1/2 -rotate-45" : "top-[11px] rotate-0"
+                open
+                  ? "top-1/2 -translate-y-1/2 -rotate-45"
+                  : "top-[11px] rotate-0"
               }`}
             />
           </span>
@@ -275,7 +371,7 @@ export default function Nav() {
           >
             <ul className="grid gap-1">
               {links.map((l) =>
-                l.children ? (
+                l.children || l.sections ? (
                   <MobileDisclosure
                     key={l.label}
                     item={l}
@@ -291,7 +387,7 @@ export default function Nav() {
                       {l.label}
                     </a>
                   </li>
-                )
+                ),
               )}
             </ul>
             {/* Both pills centre their label with flex rather than padding.
